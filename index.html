@@ -2,23 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMC Handbook</title>
-
+    <title>CESC Flipbook</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.36/dflip/css/dflip.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.36/dflip/css/themify-icons.min.css">
     
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; background-color: #333; }
-        #my-book-container { height: 100vh; width: 100%; }
+        body, html { margin: 0; padding: 0; height: 100%; background-color: #222; }
+        #my-flipbook { height: 100vh; width: 100%; }
     </style>
 </head>
 <body>
 
-    <div id="my-book-container" class="_df_book" source="book.pdf"></div>
+    <div id="my-flipbook"></div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.36/dflip/js/dflip.min.js"></script>
+
+    <script>
+        // Manually initialize the flipbook
+        $(document).ready(function () {
+            var pdfUrl = "book.pdf";
+            var options = {
+                height: 2000,
+                duration: 800,
+                backgroundColor: "#222"
+            };
+            var flipBook = $("#my-flipbook").flipBook(pdfUrl, options);
+        });
+    </script>
 
 </body>
 </html>
