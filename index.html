@@ -1,34 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>CESC Flipbook</title>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.36/dflip/css/dflip.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.36/dflip/css/themify-icons.min.css">
-    
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; background-color: #222; }
-        #my-flipbook { height: 100vh; width: 100%; }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #333; }
+        iframe { border: none; width: 100%; height: 100vh; }
     </style>
 </head>
 <body>
 
-    <div id="my-flipbook" class="_df_book" source="book.pdf"></div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.36/dflip/js/dflip.min.js"></script>
-
-    <script>
-        // This checks if the library is loaded before trying to use it
-        window.DFLIP_LIB_URL = "https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.36/dflip/";
-        
-        $(document).ready(function () {
-            if (typeof $.fn.flipBook !== 'function') {
-                console.log("Waiting for DearFlip to load...");
-            }
-        });
-    </script>
+    <iframe 
+        src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://koustav-shee-cesc.github.io/book.pdf" 
+        title="Flipbook">
+    </iframe>
 
 </body>
 </html>
