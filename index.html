@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CESC Flipbook</title>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.36/dflip/css/dflip.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.36/dflip/css/themify-icons.min.css">
     
@@ -13,21 +14,19 @@
 </head>
 <body>
 
-    <div id="my-flipbook"></div>
+    <div id="my-flipbook" class="_df_book" source="book.pdf"></div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.36/dflip/js/dflip.min.js"></script>
 
     <script>
-        // Manually initialize the flipbook
+        // This checks if the library is loaded before trying to use it
+        window.DFLIP_LIB_URL = "https://cdn.jsdelivr.net/npm/@dearhive/dearflip-jquery-flipbook@1.7.36/dflip/";
+        
         $(document).ready(function () {
-            var pdfUrl = "book.pdf";
-            var options = {
-                height: 2000,
-                duration: 800,
-                backgroundColor: "#222"
-            };
-            var flipBook = $("#my-flipbook").flipBook(pdfUrl, options);
+            if (typeof $.fn.flipBook !== 'function') {
+                console.log("Waiting for DearFlip to load...");
+            }
         });
     </script>
 
